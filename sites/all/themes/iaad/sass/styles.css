@@ -1,0 +1,1232 @@
+/**
+ * @file
+ * Styles are organized using the SMACSS technique. @see http://smacss.com/book/
+ *
+ * When you turn on CSS aggregation at admin/config/development/performance, all
+ * of these @include files will be combined into a single file.
+ */
+/* Import Sass mixins, variables, Compass modules, etc. */
+/* HTML element (SMACSS base) rules */
+/* normalize.css v3.0.2 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+/* Layout rules */
+/**
+ * @file
+ * Positioning for a responsive layout.
+ *
+ * Define CSS classes to create a fluid grid layout with optional sidebars
+ * depending on whether blocks are placed in the left or right sidebars.
+ *
+ * This layout uses the Zen Grids plugin for Compass: http://zengrids.com
+ */
+/**
+ * Center the page.
+ *
+ * For screen sizes larger than 1200px, prevent excessively long lines of text
+ * by setting a max-width.
+ */
+#page,
+.region-bottom {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px; }
+
+/* Apply the shared properties of grid items in a single, efficient ruleset. */
+#header,
+#content,
+#navigation,
+.region-sidebar-first,
+.region-sidebar-second,
+#footer {
+  padding-left: 10px;
+  padding-right: 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word; }
+
+/* Containers for grid items and flow items. */
+#header:before, #header:after,
+#main:before,
+#main:after,
+#footer:before,
+#footer:after {
+  content: "";
+  display: table; }
+#header:after,
+#main:after,
+#footer:after {
+  clear: both; }
+
+/* Navigation bar */
+@media all and (min-width: 480px) {
+  #main {
+    /* Move all the children of #main down to make room. */
+    padding-top: 3em;
+    position: relative; }
+
+  #navigation {
+    /* Move the navbar up inside #main's padding. */
+    position: absolute;
+    top: 0;
+    height: 3em;
+    width: 100%; } }
+/**
+ * Use 3 grid columns for smaller screens.
+ */
+@media all and (min-width: 480px) and (max-width: 959px) {
+  /**
+   * The layout when there is only one sidebar, the left one.
+   */
+  .sidebar-first {
+    /* Span 2 columns, starting in 2nd column from left. */
+    /* Span 1 column, starting in 1st column from left. */ }
+    .sidebar-first #content {
+      float: left;
+      width: 66.66667%;
+      margin-left: 33.33333%;
+      margin-right: -100%; }
+    .sidebar-first .region-sidebar-first {
+      float: left;
+      width: 33.33333%;
+      margin-left: 0%;
+      margin-right: -33.33333%; }
+
+  /**
+   * The layout when there is only one sidebar, the right one.
+   */
+  .sidebar-second {
+    /* Span 2 columns, starting in 1st column from left. */
+    /* Span 1 column, starting in 3rd column from left. */ }
+    .sidebar-second #content {
+      float: left;
+      width: 66.66667%;
+      margin-left: 0%;
+      margin-right: -66.66667%; }
+    .sidebar-second .region-sidebar-second {
+      float: left;
+      width: 33.33333%;
+      margin-left: 66.66667%;
+      margin-right: -100%; }
+
+  /**
+   * The layout when there are two sidebars.
+   */
+  .two-sidebars {
+    /* Span 2 columns, starting in 2nd column from left. */
+    /* Span 1 column, starting in 1st column from left. */
+    /* Start a new row and span all 3 columns. */ }
+    .two-sidebars #content {
+      float: left;
+      width: 66.66667%;
+      margin-left: 33.33333%;
+      margin-right: -100%; }
+    .two-sidebars .region-sidebar-first {
+      float: left;
+      width: 33.33333%;
+      margin-left: 0%;
+      margin-right: -33.33333%; }
+    .two-sidebars .region-sidebar-second {
+      float: left;
+      width: 100%;
+      margin-left: 0%;
+      margin-right: -100%;
+      padding-left: 0;
+      padding-right: 0;
+      clear: left;
+      /* Apply the shared properties of grid items in a single, efficient ruleset. */
+      /* Span 1 column, starting in the 1st column from left. */
+      /* Span 1 column, starting in the 2nd column from left. */
+      /* Span 1 column, starting in the 3rd column from left. */ }
+      .two-sidebars .region-sidebar-second .block {
+        padding-left: 10px;
+        padding-right: 10px;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        box-sizing: border-box;
+        word-wrap: break-word; }
+      .two-sidebars .region-sidebar-second .block:nth-child(3n+1) {
+        float: left;
+        width: 33.33333%;
+        margin-left: 0%;
+        margin-right: -33.33333%;
+        clear: left; }
+      .two-sidebars .region-sidebar-second .block:nth-child(3n+2) {
+        float: left;
+        width: 33.33333%;
+        margin-left: 33.33333%;
+        margin-right: -66.66667%; }
+      .two-sidebars .region-sidebar-second .block:nth-child(3n) {
+        float: left;
+        width: 33.33333%;
+        margin-left: 66.66667%;
+        margin-right: -100%; } }
+/**
+ * Use 5 grid columns for larger screens.
+ */
+@media all and (min-width: 960px) {
+  /**
+   * The layout when there is only one sidebar, the left one.
+   */
+  .sidebar-first {
+    /* Span 4 columns, starting in 2nd column from left. */
+    /* Span 1 column, starting in 1st column from left. */ }
+    .sidebar-first #content {
+      float: left;
+      width: 80%;
+      margin-left: 20%;
+      margin-right: -100%; }
+    .sidebar-first .region-sidebar-first {
+      float: left;
+      width: 20%;
+      margin-left: 0%;
+      margin-right: -20%; }
+
+  /**
+   * The layout when there is only one sidebar, the right one.
+   */
+  .sidebar-second {
+    /* Span 4 columns, starting in 1st column from left. */
+    /* Span 1 column, starting in 5th column from left. */ }
+    .sidebar-second #content {
+      float: left;
+      width: 80%;
+      margin-left: 0%;
+      margin-right: -80%; }
+    .sidebar-second .region-sidebar-second {
+      float: left;
+      width: 20%;
+      margin-left: 80%;
+      margin-right: -100%; }
+
+  /**
+   * The layout when there are two sidebars.
+   */
+  .two-sidebars {
+    /* Span 3 columns, starting in 2nd column from left. */
+    /* Span 1 column, starting in 1st column from left. */
+    /* Span 1 column, starting in 5th column from left. */ }
+    .two-sidebars #content {
+      float: left;
+      width: 60%;
+      margin-left: 20%;
+      margin-right: -80%; }
+    .two-sidebars .region-sidebar-first {
+      float: left;
+      width: 20%;
+      margin-left: 0%;
+      margin-right: -20%; }
+    .two-sidebars .region-sidebar-second {
+      float: left;
+      width: 20%;
+      margin-left: 80%;
+      margin-right: -100%; } }
+/* Component (SMACSS module) rules */
+/**
+ * @file
+ * SMACSS Modules
+ *
+ * Adds modular sets of styles.
+ *
+ * Additional useful selectors can be found in Zen's online documentation.
+ * https://drupal.org/node/1707736
+ */
+/**
+ * Wireframes.
+ */
+.with-wireframes #header,
+.with-wireframes #main,
+.with-wireframes #content,
+.with-wireframes #navigation,
+.with-wireframes .region-sidebar-first,
+.with-wireframes .region-sidebar-second,
+.with-wireframes #footer,
+.with-wireframes .region-bottom {
+  outline: 1px solid #ccc; }
+
+/**
+ * Accessibility features.
+ */
+/* element-invisible as defined by http://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+.element-invisible,
+.element-focusable,
+#navigation .block-menu .block__title,
+#navigation .block-menu-block .block__title {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px); }
+
+/* Turns off the element-invisible effect. */
+.element-focusable:active, .element-focusable:focus {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto; }
+
+/*
+ * The skip-link link will be completely hidden until a user tabs to the link.
+ */
+#skip-link {
+  margin: 0; }
+  #skip-link a,
+  #skip-link a:visited {
+    display: block;
+    width: 100%;
+    padding: 2px 0 3px 0;
+    text-align: center;
+    background-color: #666;
+    color: #fff; }
+
+/**
+ * Branding header.
+ */
+/* Wrapping link for logo. */
+.header__logo {
+  float: left;
+  margin: 0;
+  padding: 0; }
+
+/* Logo image. */
+.header__logo-image {
+  vertical-align: bottom; }
+
+/* Wrapper for website name and slogan. */
+.header__name-and-slogan {
+  float: left; }
+
+/* The name of the website. */
+.header__site-name {
+  margin: 0; }
+
+/* The link around the name of the website. */
+.header__site-link:link, .header__site-link:visited {
+  color: #000;
+  text-decoration: none; }
+.header__site-link:hover, .header__site-link:focus {
+  text-decoration: underline; }
+
+/* The slogan (or tagline) of a website. */
+.header__site-slogan {
+  margin: 0; }
+
+/* The secondary menu (login, etc.) */
+.header__secondary-menu {
+  float: right; }
+
+/* Wrapper for any blocks placed in the header region. */
+.header__region {
+  /* Clear the logo. */
+  clear: both; }
+
+/**
+ * Navigation bar.
+ */
+#navigation {
+  /* Sometimes you want to prevent overlapping with main div. */
+  /* overflow: hidden; */
+  /* Main menu and secondary menu links and menu block links. */ }
+  #navigation .block {
+    margin-bottom: 0; }
+  #navigation .links,
+  #navigation .menu {
+    margin: 0;
+    padding: 0;
+    text-align: left; }
+    #navigation .links li,
+    #navigation .menu li {
+      /* A simple method to get navigation links to appear in one line. */
+      float: left;
+      padding: 0 10px 0 0;
+      list-style-type: none;
+      list-style-image: none; }
+
+/**
+ * Breadcrumb navigation.
+ */
+.breadcrumb ol {
+  margin: 0;
+  padding: 0; }
+.breadcrumb li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+/**
+ * Titles.
+ */
+.page__title,
+.node__title,
+.block__title,
+.comments__title,
+.comments__form-title,
+.comment__title {
+  /* Comment title. */
+  margin: 0; }
+
+/**
+ * Messages.
+ */
+.messages, .messages--status, .messages--warning, .messages--error {
+  margin: rhythm(1) 0;
+  padding: 10px 10px 10px 50px;
+  background-image: inline-image("message-24-ok.png");
+  background-position: 8px 8px;
+  background-repeat: no-repeat;
+  border: 1px solid #be7; }
+
+.messages--warning {
+  background-image: inline-image("message-24-warning.png");
+  border-color: #ed5; }
+
+.messages--error {
+  background-image: inline-image("message-24-error.png");
+  border-color: #ed541d; }
+
+.messages__list {
+  margin: 0; }
+
+.messages__item {
+  list-style-image: none; }
+
+/* Core/module installation error messages. */
+.messages--error p.error {
+  color: #333; }
+
+/* System status report. */
+.ok,
+.messages--status {
+  background-color: #f8fff0;
+  color: #234600; }
+
+.warning,
+.messages--warning {
+  background-color: #fffce5;
+  color: #840; }
+
+.error,
+.messages--error {
+  background-color: #fef5f1;
+  color: #8c2e0b; }
+
+/**
+ * Tabs.
+ */
+/* Basic positioning styles shared by primary and secondary tabs. */
+.tabs-primary, .tabs-secondary {
+  /* IE 9 and earlier don't understand gradients. */
+  list-style: none;
+  border-bottom: 1px solid #bbbbbb \0/ie;
+  margin: rhythm(1) 0;
+  padding: 0 2px;
+  white-space: nowrap; }
+
+.tabs-primary__tab, .tabs-secondary__tab,
+.tabs-secondary__tab.is-active {
+  float: left;
+  margin: 0 3px; }
+
+a.tabs-primary__tab-link, a.tabs-secondary__tab-link {
+  border: 1px solid #e9e9e9;
+  border-right: 0;
+  border-bottom: 0;
+  display: block;
+  text-decoration: none; }
+
+/* Primary tabs. */
+.tabs-primary__tab, .tabs-primary__tab.is-active {
+  border: 1px solid #bbbbbb;
+  border-bottom-color: transparent;
+  /* IE 9 and earlier don't understand gradients. */
+  border-bottom: 0 \0/ie; }
+
+.is-active.tabs-primary__tab {
+  border-bottom-color: white; }
+
+a.tabs-primary__tab-link, a.tabs-primary__tab-link.is-active {
+  color: #333;
+  background-color: #dedede;
+  letter-spacing: 1px;
+  padding: 0 1em;
+  text-align: center; }
+
+a.tabs-primary__tab-link:hover, a.tabs-primary__tab-link:focus {
+  background-color: #e9e9e9;
+  border-color: #f2f2f2; }
+
+a.tabs-primary__tab-link:active, a.tabs-primary__tab-link.is-active {
+  background-color: transparent;
+  border-color: #fff; }
+
+/* Secondary tabs. */
+.tabs-secondary {
+  font-size: .9em;
+  /* Collapse bottom margin of ul.primary. */
+  margin-top: -rhythm(1); }
+
+.tabs-secondary__tab,
+.tabs-secondary__tab.is-active {
+  margin: rhythm(1)/2 3px; }
+
+a.tabs-secondary__tab-link, a.tabs-secondary__tab-link.is-active {
+  background-color: #f2f2f2;
+  color: #666;
+  padding: 0 .5em; }
+
+a.tabs-secondary__tab-link:hover, a.tabs-secondary__tab-link:focus {
+  background-color: #dedede;
+  border-color: #999;
+  color: #333; }
+
+a.tabs-secondary__tab-link:active, a.tabs-secondary__tab-link.is-active {
+  background-color: #666;
+  border-color: #000;
+  color: #fff; }
+
+/**
+ * Inline styles.
+ */
+/* List of links generated by theme_links(). */
+.inline {
+  display: inline;
+  padding: 0; }
+  .inline li {
+    display: inline;
+    list-style-type: none;
+    padding: 0 1em 0 0; }
+
+/* The inline field label used by the Fences module. */
+span.field-label {
+  padding: 0 1em 0 0; }
+
+/**
+ * "More" links.
+ */
+.more-link {
+  text-align: right; }
+
+.more-help-link {
+  text-align: right; }
+
+.more-help-link a {
+  background-image: inline-image("help.png");
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  padding: 1px 0 1px 20px; }
+
+/**
+ * Pager.
+ */
+/* A list of page numbers when more than 1 page of content is available. */
+.pager {
+  clear: both;
+  padding: 0;
+  text-align: center; }
+
+.pager-item,
+.pager-first,
+.pager-previous,
+.pager-next,
+.pager-last,
+.pager-ellipsis, .pager-current {
+  display: inline;
+  padding: 0 0.5em;
+  list-style-type: none;
+  background-image: none; }
+
+.pager-item,
+.pager-first,
+.pager-previous,
+.pager-next,
+.pager-last,
+.pager-ellipsis {
+  /* A concatenation of several list items using an ellipsis. */ }
+
+/* The current page's list item. */
+.pager-current {
+  font-weight: bold; }
+
+/**
+ * Blocks.
+ */
+/* Block wrapper. */
+.block {
+  margin-bottom: rhythm(1); }
+
+/**
+ * Menus.
+ */
+.menu__item.is-leaf {
+  list-style-image: inline-image("menu-leaf.png");
+  list-style-type: square; }
+
+.menu__item.is-expanded {
+  list-style-image: inline-image("menu-expanded.png");
+  list-style-type: circle; }
+
+.menu__item.is-collapsed {
+  list-style-image: inline-image("menu-collapsed.png");
+  list-style-type: disc; }
+
+/* The active item in a Drupal menu. */
+.menu a.active {
+  color: #000; }
+
+/**
+ * Marker.
+ */
+/* The "new" or "updated" marker. */
+.new,
+.update {
+  color: #c00;
+  /* Remove background highlighting from <mark> in normalize. */
+  background-color: transparent; }
+
+/**
+ * Unpublished note.
+ */
+/* The word "Unpublished" displayed underneath the content. */
+.unpublished {
+  height: 0;
+  overflow: visible;
+  /* Remove background highlighting from <mark> in normalize. */
+  background-color: transparent;
+  color: #d8d8d8;
+  font-size: 75px;
+  line-height: 1;
+  font-family: Impact, "Arial Narrow", Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  /* A very nice CSS3 property. */
+  word-wrap: break-word; }
+
+/**
+ * Comments.
+ */
+/* Wrapper for the list of comments and its title. */
+.comments {
+  margin: rhythm(1) 0; }
+
+/* Preview of the comment before submitting new or updated comment. */
+.comment-preview {
+  /* Drupal core will use a #ffffea background. See #1110842. */
+  background-color: #ffffea; }
+
+/* Wrapper for a single comment. */
+.comment {
+  /* Comment's permalink wrapper. */ }
+  .comment .permalink {
+    text-transform: uppercase;
+    font-size: 75%; }
+
+/* Nested comments are indented. */
+.indented {
+  /* Drupal core uses a 25px left margin. */
+  margin-left: 30px; }
+
+/**
+ * Forms.
+ */
+/* Wrapper for a form element (or group of form elements) and its label. */
+.form-item {
+  margin: rhythm(1) 0;
+  /* Pack groups of checkboxes and radio buttons closer together. */
+  /* Form items in a table. */
+  /* Highlight the form elements that caused a form submission error. */
+  /* The descriptive help text (separate from the label). */ }
+  .form-checkboxes .form-item, .form-radios .form-item {
+    /* Drupal core uses "0.4em 0". */
+    margin: 0; }
+  tr.odd .form-item, tr.even .form-item {
+    margin: 0; }
+  .form-item input.error,
+  .form-item textarea.error,
+  .form-item select.error {
+    border: 1px solid #c00; }
+  .form-item .description {
+    font-size: 0.85em; }
+
+.form-type-radio .description,
+.form-type-checkbox .description {
+  margin-left: 2.4em; }
+
+/* The part of the label that indicates a required field. */
+.form-required {
+  color: #c00; }
+
+/* Labels for radios and checkboxes. */
+label.option {
+  display: inline;
+  font-weight: normal; }
+
+/* Buttons used by contrib modules like Media. */
+/* Password confirmation. */
+.password-parent,
+.confirm-parent {
+  margin: 0; }
+
+/* Drupal's default login form block. */
+#user-login-form {
+  text-align: left; }
+
+/**
+ * OpenID
+ *
+ * The default styling for the OpenID login link seems to assume Garland's
+ * styling of list items.
+ */
+/* OpenID creates a new ul above the login form's links. */
+.openid-links {
+  /* Position OpenID's ul next to the rest of the links. */
+  margin-bottom: 0; }
+
+/* The "Log in using OpenID" and "Cancel OpenID login" links. */
+.openid-link,
+.user-link {
+  margin-top: rhythm(1); }
+
+html.js #user-login-form li.openid-link,
+#user-login-form li.openid-link {
+  /* Un-do some of the padding on the ul list. */
+  margin-left: -20px; }
+
+#user-login ul {
+  margin: rhythm(1) 0; }
+
+/**
+ * Drupal admin tables.
+ */
+form th {
+  text-align: left;
+  padding-right: 1em;
+  border-bottom: 3px solid #ccc; }
+form tbody {
+  border-top: 1px solid #ccc; }
+form table ul {
+  margin: 0; }
+
+tr.even,
+tr.odd {
+  background-color: #eee;
+  border-bottom: 1px solid #ccc;
+  padding: 0.1em 0.6em; }
+
+tr.even {
+  background-color: #fff; }
+
+/* Markup generated by theme_tablesort_indicator(). */
+td.active {
+  background-color: #ddd; }
+
+/* Center checkboxes inside table cell. */
+td.checkbox,
+th.checkbox {
+  text-align: center; }
+
+/* Drupal core wrongly puts this in system.menus.css. Since we override that, add it back. */
+td.menu-disabled {
+  background: #ccc; }
+
+/**
+ * Autocomplete.
+ *
+ * @see autocomplete.js
+ */
+/* Suggestion list. */
+#autocomplete .selected {
+  background: #0072b9;
+  color: #fff; }
+
+/**
+ * Collapsible fieldsets.
+ *
+ * @see collapse.js
+ */
+html.js .collapsible .fieldset-legend {
+  background-image: inline-image("menu-expanded.png");
+  background-position: 5px 65%;
+  background-repeat: no-repeat;
+  padding-left: 15px; }
+html.js .collapsed .fieldset-legend {
+  background-image: inline-image("menu-collapsed.png");
+  background-position: 5px 50%; }
+.fieldset-legend .summary {
+  color: #999;
+  font-size: 0.9em;
+  margin-left: 0.5em; }
+
+/**
+ * TableDrag behavior.
+ *
+ * @see tabledrag.js
+ */
+tr.drag {
+  background-color: #fffff0; }
+
+tr.drag-previous {
+  background-color: #ffd; }
+
+.tabledrag-toggle-weight {
+  font-size: 0.9em; }
+
+/**
+ * TableSelect behavior.
+ *
+ * @see tableselect.js
+ */
+tr.selected td {
+  background: #ffc; }
+
+/**
+ * Progress bar.
+ *
+ * @see progress.js
+ */
+.progress {
+  font-weight: bold; }
+  .progress .bar {
+    background: #ccc;
+    border-color: #666;
+    margin: 0 0.2em; }
+  .progress .filled {
+    background-color: #0072b9;
+    background-image: image-url("progress.gif"); }
+
+/* Site Theming Goes Here */
+#page {
+  width: 100%;
+  max-width: 100%;
+  visibility: visible; }
+
+/**
+ * @file
+ * Print styling
+ *
+ * We provide some sane print styling for Drupal using Zen's layout method.
+ */
+/**
+ * By importing this CSS file as media "all", we allow this print file to be
+ * aggregated with other stylesheets, for improved front-end performance.
+ */
+@media print {
+  /* Underline all links. */
+  a:link,
+  a:visited {
+    text-decoration: underline !important;
+    /* Don't underline header. */ }
+    a:link.header__site-link,
+    a:visited.header__site-link {
+      text-decoration: none !important; }
+
+  #content {
+    /* Add visible URL after links. */
+    /* Only display useful links. */
+    /* Add visible title after abbreviations. */ }
+    #content a[href]:after {
+      content: " (" attr(href) ")";
+      font-weight: normal;
+      font-size: 16px; }
+    #content a[href^="javascript:"]:after,
+    #content a[href^="#"]:after {
+      content: ""; }
+    #content abbr[title]:after {
+      content: " (" attr(title) ")"; }
+
+  /* Un-float the content. */
+  #content {
+    float: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important; }
+
+  /* Turn off any background colors or images. */
+  body,
+  #page,
+  #main,
+  #content {
+    color: #000;
+    background-color: transparent !important;
+    background-image: none !important; }
+
+  /* Hide sidebars and nav elements. */
+  #skip-link,
+  #toolbar,
+  #navigation,
+  .region-sidebar-first,
+  .region-sidebar-second,
+  #footer,
+  .breadcrumb,
+  .tabs,
+  .action-links,
+  .links,
+  .book-navigation,
+  .forum-topic-navigation,
+  .pager,
+  .feed-icons {
+    visibility: hidden;
+    display: none; } }
+/* SMACSS theme rules */
+/* @import "theme-A"; */
+/* @import "theme-B"; */
